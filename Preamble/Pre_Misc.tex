@@ -1,0 +1,40 @@
+% Reuse title etc with \thetitle
+\usepackage{titling}
+
+% Typeset code with \begin{lstlisting}...\end{lstlisting} or \lstinline!...!
+\usepackage{listings}
+
+% Dummy text \lipsum[..]
+\usepackage{lipsum}
+
+% Glossary
+\usepackage[noredefwarn]{glossaries}
+
+% Tolerance for distance between words. Large number = more distance allowed
+\pretolerance=2500
+
+% Configuration of lists
+\usepackage[shortlabels]{enumitem}
+% Alphabet-ordered list
+\newenvironment{alpherate}{\begin{enumerate}[label=\alph*.]}{\end{enumerate}}
+\setlist[description]{style=nextline}
+\setlist[itemize]{
+	topsep=\baselineskip/3,
+	noitemsep,
+}
+\setlist[enumerate]{
+	topsep=\baselineskip/3,
+	noitemsep,
+}
+
+% Typeset nice directional quotation marks
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+% Typeset a quote with a name attached with \begin{quotename}{NAME}...\end{quotename}
+\NewDocumentEnvironment{quotename}{m}%
+	{\begin{quote}\itshape}
+	{\\\normalfont\sourceatright{--- #1}\end{quote}}
+
+% Make a blank line with \blankline (please don't overuse)
+\newcommand{\blankline}{\vskip \baselineskip \noindent}

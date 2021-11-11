@@ -1,0 +1,51 @@
+\input{Preamble/Preamble}
+\input{Definitions}
+\begin{document}
+
+\pagenumbering{gobble} % Remove page numbering for now
+
+%%%% Formalia %%%%
+\input{Content/Formalia/FrontPage}
+\input{Content/Formalia/TitlePage}
+\input{Content/Formalia/Preface}
+\cleardoublepage\tableofcontents* %Table of Contents
+
+\mainmatter	% Begin page numerating
+
+%Formal Introduction
+%\input{Content/Introduction/FormalIntroduction/StateOfTheArt}
+
+%Introduction
+\input{Content/Introduction/Introduction.tex}
+\input{Content/Introduction/FormalIntroduction/StateOfTheArt}
+\input{Content/Introduction/HydrogelParticles}
+\input{Content/Introduction/gelatinHydrogelMaterial}
+\input{Content/Introduction/DropletGeneration}
+
+%Method
+\input{Content/Method/Method.tex}
+\input{Content/Method/gelatinStirringProcess}
+\input{Content/Method/gelatinLargeChannelsTjunction}
+\input{Content/Method/MicroscopyAndAnalysis}
+\input{Content/Method/rheologyMeasurementsOfGels}
+
+%Results
+\input{Content/Results/Results.tex}
+\input{Content/Results/MicroscopeAnalysisOfParticles}
+
+%Discussion
+\input{Content/Discussion/Discussion.tex}
+
+%Conclusion
+\input{Content/Conclusion/Conclusion.tex}
+
+%%%% Bibliography %%%%
+\newpage\printbibliography \label{Bibliography}
+
+%%%% Appendix %%%%
+\appendix
+\appendixpage
+%\input{Content/Appendix/Appendix_One.tex}
+
+\end{document}
+

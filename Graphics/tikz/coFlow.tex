@@ -1,0 +1,55 @@
+\documentclass[]{standalone}
+\begin{document}
+\begin{tikzpicture}
+%definitions
+
+\def\x{3.7} %pipe length
+\def\y{1.2} % pipe half-width
+\def\r{0.4} % drop radius
+
+\def\w{5} %width
+
+%
+%FIG2
+%
+
+\coordinate (A) at (\x,\y);
+\coordinate (B) at (-\x,\y);
+\coordinate (C) at (-\x,-\y);
+\coordinate (D) at (\x,-\y);
+\coordinate (E) at (-\x/3,\y/3);
+\coordinate (F) at (-\x,\y/3);
+\coordinate (G) at (-\x,-\y/3);
+\coordinate (H) at (-\x/3,-\y/3);
+
+%Exterior pipe
+
+\draw[line width = \w, name path=U1] (B) -- (A); %upper pipe
+\draw[line width = \w, name path = D1] (C) -- (D); %lower pipe
+
+\tikzfillbetween[of=U1 and D1]{blue!5}; %exterior pipe fill
+
+%First droplet
+
+\filldraw [thin, fill=cyan!70] plot [smooth cycle] coordinates {(-\x/3-0.05,\y/3) (-\x/6,\r/4) (0,+\r) (0.7*\r,0.7*\r) (+\r,0) (0.7*\r,-0.7*\r) (0,-\r)  (-\x/6,-\r/4) (-\x/3-0.05,-\y/3)};
+
+%Interior pipe
+
+\draw[line width = \w, name path=U] (E) -- (F); %upper pipe
+\draw[line width = \w, name path = D] (G) -- (H); %lower pipe
+
+\tikzfillbetween[of=U and D]{cyan!70}; %interior pipe 
+
+
+%Drops
+
+\foreach \c in {(0,0), (1,0), (2,0)} \filldraw[thin,fill=cyan!70] (-\x/2+2.5*\y,0) + \c circle (\r);
+
+%Arrows
+
+\draw[purple, line width = 0.8*\w,-{Triangle[length=6, width=6]}] (-0.9*\x,2*\y/3) -- (-2*\x/3,2*\y/3);
+\draw[blue, line width = 0.8*\w,-{Triangle[length=6, width=6]}] (-0.9*\x,0) -- (-2*\x/3,0);
+\draw[purple, line width = 0.8*\w,-{Triangle[length=6, width=6]}] (-0.9*\x,-2*\y/3) -- (-2*\x/3,-2*\y/3);
+
+\end{tikzpicture}
+\end{document}

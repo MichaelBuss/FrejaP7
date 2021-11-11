@@ -1,0 +1,17 @@
+% Clickable links in the PDF
+\usepackage{hyperref}
+
+% A custom command for referencing a chapter/section, showing both number and name
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} (\textit{\nameref*{#1}})}}
+
+% Depth of enumerated headings, choose part/chapter/section/subsection. Must be shallower than \maxsecnumdepth
+\setsecnumdepth{section}
+
+% Maximum depth of enumerated headings. Must at least as deep as \setsecnumdepth
+\maxsecnumdepth{subsection}
+
+% Depth that is shown in table of contents
+\settocdepth{subsection}
+
+% Turns off page numbering for parts and the toc
+\cftpagenumbersoff{part}

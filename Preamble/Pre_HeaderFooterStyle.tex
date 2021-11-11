@@ -1,0 +1,36 @@
+\makepagestyle{AAU}
+\makepsmarks{AAU}{
+	\createmark{chapter}{left}{shownumber}{}{. \ }
+	\createmark{section}{right}{shownumber}{}{. \ }
+	\createplainmark{toc}{both}{\contentsname}
+	\createplainmark{lof}{both}{\listfigurename}
+	\createplainmark{lot}{both}{\listtablename}
+	\createplainmark{bib}{both}{\bibname}
+	\createplainmark{index}{both}{\indexname}
+	\createplainmark{glossary}{both}{\glossaryname}
+}
+
+% No caps
+\nouppercaseheads
+
+% Defines even and odd pages header {name}{left}{center}{right}
+\makeevenhead{AAU}{\groupname}{}{\leftmark}
+\makeoddhead{AAU}{\rightmark}{}{\universityname}
+
+% Defines even and odd pages footer {name}{left}{center}{right}
+\makeevenfoot{AAU}{\thepage}{}{}
+\makeoddfoot{AAU}{}{}{\thepage}
+
+% Adds line under header and footer content
+\makeheadrule{AAU}{\textwidth}{0.5pt}
+\makefootrule{AAU}{\textwidth}{0.5pt}{1mm}
+
+% Style for chapter pages are the same, but blank header
+\copypagestyle{AAUchap}{AAU} % Make copy
+\makeoddhead{AAUchap}{}{}{}
+\makeevenhead{AAUchap}{}{}{}
+\makeheadrule{AAUchap}{\textwidth}{0pt}
+
+% Apply header and footer styles defined above
+\aliaspagestyle{chapter}{AAUchap}
+\pagestyle{AAU}

@@ -1,0 +1,18 @@
+% Notifies if old or problematic packages/commands are used
+\RequirePackage[l2tabu, orthodox]{nag}
+
+% Memoir is the class of this document. Others exist but will likely not work correctly with this preamble
+\documentclass[a4paper,11pt,twoside,openright]{memoir}
+% [a4paper] = Paper size
+% [11pt] = Font size for body text
+% [twoside] = For print on both sides of the paper, puts extra space near the spine of the phamplet/book
+% [openright] = Always start new chapters on the page to the right (for printing on paper), alternatively use [openany] if you don't care
+
+% Document language
+\usepackage[english]{babel}
+
+% Input text encoding UTF8
+\usepackage[utf8]{inputenc}
+
+% Output encoding T1. Gives access to most European accented characters
+\usepackage[T1]{fontenc}
